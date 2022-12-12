@@ -12,7 +12,7 @@ export default function Template1() {
     const extraCurricState = useSelector(state => state.extracurrics.value);
     const languagesState = useSelector(state => state.languages.value);
     const linksState = useSelector(state => state.links.value);
-
+console.log(personalDetails)
     return (
         <div className={styles.container}>
             <p className={styles.name}>{personalDetails.firstName} {personalDetails.lastName}</p>
