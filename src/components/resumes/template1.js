@@ -12,7 +12,7 @@ export default function Template1() {
     const extraCurricState = useSelector(state => state.extracurrics.value);
     const languagesState = useSelector(state => state.languages.value);
     const linksState = useSelector(state => state.links.value);
-console.log(personalDetails)
+
     return (
         <div className={styles.container}>
             <p className={styles.name}>{personalDetails.firstName} {personalDetails.lastName}</p>
@@ -63,8 +63,62 @@ console.log(personalDetails)
             </div>
             <div className={styles.skills}>
                 <p className={styles.skillheading}>Skill-Set</p>
-                <p className={styles.skillsset}>{personalDetails.skills}</p> 
+                <p className={styles.skillsset}>{personalDetails.skills}</p>
             </div>
+
+            <div className={styles.internship}>
+                <p className={styles.Educationeading}>Internship</p>
+                {internshipState.map((e) => {
+                    return (
+                        <div className={styles.educontent}>
+                            <p className={styles.employment1}>{e.internship}................................................................................................................................{e.start}to{e.end}({e.city})</p>
+                            <p className={styles.employment1}>EmployerName:{e.employer}</p>
+                            <p className={styles.employment2}>{e.decs}</p>
+                        </div>
+
+
+                    )
+
+                })
+                }
+
+
+            </div>
+            <div className={styles.languages}>
+                <p className={styles.languagesHedaing}>Languages known</p>
+                {languagesState.map((e) => {
+                    return (
+                        <div className={styles.educontent}>
+                            <p className={styles.employment1}>{e.name}({e.proficiency})</p>
+                        </div>
+
+
+                    )
+
+                })
+                }
+
+
+            </div>
+            <div className={styles.reference}>
+                <p className={styles.referenceheading}>References known</p>
+                {referencesState.map((e) => {
+                    return (
+                        <div className={styles.educontent}>
+                            <p className={styles.employment1}>{e.name} Ph:{e.phone} email:{e.email}</p>
+                            <p className={styles.employment1}>{e.company}</p>
+
+                        </div>
+
+
+                    )
+
+                })
+                }
+
+
+            </div>
+
 
 
 
